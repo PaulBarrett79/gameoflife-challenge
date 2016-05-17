@@ -1,0 +1,31 @@
+{{population}}
+ <div>
+    <table>
+      <tr ng-repeat="r in rows">
+        
+          <td ng-repeat="c in columns">
+             <singlecell row="r" column="c" population="population" changefunc="changePop()"></singlecell>
+          </td>
+        
+      </tr>
+    </table>
+ </div>
+
+
+
+<style type="text/css">
+  td {
+    width:16px;
+    height:14px;
+    border:1px solid #ddd;
+  }
+  tr {
+    height: 16px;
+  }
+  div.alive {
+    background-color: green;
+  }
+  td div {
+    width:100%;
+  }
+</style>
