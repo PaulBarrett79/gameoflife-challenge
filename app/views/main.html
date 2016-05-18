@@ -1,15 +1,23 @@
-{{population}}
- <div>
+
+
+ <div class="row" id="gridholder">
+
     <table>
       <tr ng-repeat="r in rows">
         
           <td ng-repeat="c in columns">
-             <singlecell row="r" column="c" population="population" changefunc="changePop()"></singlecell>
+             <singlecell row="r" column="c" population="population" change-func="changePop(item, addOrRemove)"></singlecell>
           </td>
         
       </tr>
     </table>
  </div>
+ <div class="row" ng-if="population.length > 0">
+  <button type="button" class="btn btn-primary pull-left" ng-click="buttonPressed()">Go</button>
+</div>
+<div class="row" ng-if="population.length == 0">
+  <button type="button" class="btn btn-primary pull-left" disabled>Go</button>
+</div>
 
 
 
@@ -27,5 +35,9 @@
   }
   td div {
     width:100%;
+  }
+  #gridholder {
+    height:800px;
+    overflow-y:auto;
   }
 </style>
